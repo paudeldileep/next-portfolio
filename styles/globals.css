@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 html,
 body {
   padding: 0;
@@ -6,11 +10,30 @@ body {
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
+#image-div {
+  border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+  background-color: black;
+  background-position: center;
+  background-size: cover;
 }
 
-* {
-  box-sizing: border-box;
+.custom-shape-divider-bottom-1639881585 {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  transform: rotate(180deg);
+}
+
+.custom-shape-divider-bottom-1639881585 svg {
+  position: relative;
+  display: block;
+  width: calc(137% + 1.3px);
+  transform: rotateY(180deg);
+}
+
+.custom-shape-divider-bottom-1639881585 .shape-fill {
+  fill: #9013fe;
 }
