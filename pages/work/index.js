@@ -6,7 +6,7 @@ import Footer from "../../components/Footer";
 
 const Work = () => {
   return (
-    <div className="py-0 px-4 font-mono tracking-tighter">
+    <div className="py-0 px-4 font-mono tracking-tighter dark:bg-gray-700">
       <Header />
       <div className="min-h-screen w-full my-10 mx-5 py-4 px-2">
         <h2 className="text-center text-3xl mb-10">Projects Done So Far...</h2>

@@ -57,22 +57,24 @@ export default function Home() {
   // }, [blink]);
 
   return (
-    <div className="py-0 px-4 bg-gray-50">
+    <div className="py-0 px-4 bg-gray-50 dark:bg-gray-600">
       <Head>
         <title>Home:DKT</title>
         <meta name="description" content="Dileep Kumar T personal portfolio" />
         <link rel="icon" href="/icon.png" />
       </Head>
       <Header />
-      <main className="flex min-h-screen w-full justify-between items-center relative font-mono tracking-tighter">
+      <main className="flex min-h-screen w-full justify-between items-center relative font-mono tracking-tighter bg-gray-100 dark:bg-gray-700">
         <div className="w-full md:w-1/2 h-full">
-          <h1 className="text-4xl lg:text-5xl font-bold text-center text-gray-600">
+          <h1 className="text-4xl lg:text-5xl font-bold text-center text-gray-600 dark:text-gray-50">
             Hi, I&apos;m Dileep Kumar T
           </h1>
           {/* typing text  */}
           <h2 className="text-2xl lg:text-3xl my-4 font-bold text-center min-w-full m-auto px-2 relative">
-            <span className="relative text-gray-500">I am </span>
-            <span className="text-left text-violet-600">{`${words[
+            <span className="relative text-gray-500 dark:text-gray-100">
+              I am{" "}
+            </span>
+            <span className="text-left text-violet-600 dark:text-violet-300">{`${words[
               index
             ].substring(0, subIndex)}${blink ? "|" : ""}`}</span>
           </h2>
@@ -80,12 +82,12 @@ export default function Home() {
           <p className=" text-lg flex items-baseline justify-center">
             {/* action buttons */}
             <Link href="/contact">
-              <a className="bg-violet-500 border border-violet-500 hover:bg-violet-600 hover:shadow-md py-2 px-8 mx-2 rounded-md text-gray-100 font-bold hover:text-gray-50">
+              <a className="bg-violet-600 border shadow-sm shadow-violet-400 hover:shadow-violet-500 border-violet-500 dark:shadow-slate-50 dark:shadow-sm hover:bg-violet-700 hover:shadow-md py-2 px-8 mx-2 rounded-md text-gray-100 font-bold hover:text-gray-50 dark:hover:shadow-white dark:hover:shadow-md">
                 Contact Me
               </a>
             </Link>
             <Link href="/work">
-              <a className="border border-violet-500 hover:border-violet-600 hover:shadow-md py-2 px-8 mx-3 rounded-md text-gray-500 font-bold hover:text-gray-600">
+              <a className="border border-violet-500 hover:border-violet-600 dark:shadow-slate-50 dark:shadow-sm hover:shadow-md shadow-violet-400 hover:shadow-violet-500 py-2 px-8 mx-3 rounded-md text-gray-500 dark:text-gray-50 font-bold hover:text-gray-600 dark:hover:shadow-white dark:hover:shadow-md">
                 My Works
               </a>
             </Link>

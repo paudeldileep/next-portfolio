@@ -1,8 +1,9 @@
 import React from "react";
 import Link from "next/link";
 import { navLinks } from "../../utils/data";
+import CustomSwitch from "../CustomSwitch";
 
-const MainNavigation = () => {
+const MobileNavigation = (props) => {
   return (
     <div className="block w-full transition-all transform translate-y-2 md:hidden divide-y-2">
       {/* navigation links */}
@@ -13,8 +14,11 @@ const MainNavigation = () => {
           </a>
         </Link>
       ))}
+      <div className="ml-4 my-2 pt-4">
+        <CustomSwitch handleClick={props.toggleTheme} />
+      </div>
     </div>
   );
 };
 
-export default MainNavigation;
+export default MobileNavigation;

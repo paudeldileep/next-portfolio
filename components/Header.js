@@ -1,5 +1,5 @@
 import Link from "next/link";
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { AlignRight } from "react-feather";
 
 import MainNavigation from "./Navigation/MainNavigation";
@@ -8,8 +8,10 @@ import MobileNavigation from "./Navigation/MobileNavigation";
 const Header = () => {
   //toggle mobile menu
   const [showMobileNav, setShowMobileNav] = useState(false);
+  //for dark mode get values from context
+
   return (
-    <header className="flex flex-wrap md:flex-nowrap w-full justify-between items-center bg-gray-50 px-2 py-1 sticky top-0 z-10 rounded-t-md filter backdrop-blur-md bg-opacity-20 border-b border-violet-100">
+    <header className="flex flex-wrap md:flex-nowrap w-full justify-between items-center bg-gray-50 dark:bg-gray-400 px-2 py-1 sticky top-0 z-10 rounded-t-md filter backdrop-blur-md bg-opacity-20 border-b border-violet-100">
       {/* left side logo */}
       <div className="flex w-full md:w-max md:flex-shrink-0 justify-between items-center">
         <Link href="/">

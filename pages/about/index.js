@@ -7,9 +7,9 @@ import Skills from "../../components/sections/about-section/Skills";
 
 const About = () => {
   return (
-    <div className="py-0 px-4">
+    <div className="py-0 px-4 dark:bg-gray-700">
       <Header />
-      <div className="min-h-screen w-full">
+      <div className="min-h-screen w-full dark:bg-gray-700">
         <Intro />
         <Involvements />
         <Skills />

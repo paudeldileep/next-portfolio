@@ -1,5 +1,6 @@
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
+import { ThemeProvider } from "next-themes";
 import BasicLoader from "../components/Preloader/BasicLoader";
 import "../styles/globals.css";
 
@@ -31,7 +32,10 @@ function MyApp({ Component, pageProps }) {
 
   return (
     <>
-      {loading && <BasicLoader />} <Component {...pageProps} />
+      {loading && <BasicLoader />}{" "}
+      <ThemeProvider attribute="class">
+        <Component {...pageProps} />
+      </ThemeProvider>
     </>
   );
 }

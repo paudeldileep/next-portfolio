@@ -2,8 +2,10 @@ import React, { useState } from "react";
 import Link from "next/link";
 import { navLinks } from "../../utils/data";
 import { useRouter } from "next/router";
+import CustomSwitch from "../CustomSwitch";
+import { getStaticProps } from "../../pages/work/[pid]";
 
-const MainNavigation = () => {
+const MainNavigation = (props) => {
   const router = useRouter();
   const pathName = router.pathname;
 
@@ -42,6 +44,8 @@ const MainNavigation = () => {
           </a>
         </Link>
       ))}
+      {/* theme toggle */}
+      <CustomSwitch handleClick={props.toggleTheme} />
     </nav>
   );
 };
