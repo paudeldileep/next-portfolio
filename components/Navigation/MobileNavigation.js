@@ -9,7 +9,7 @@ const MobileNavigation = (props) => {
       {/* navigation links */}
       {navLinks.map((link, index) => (
         <Link href={link.href} key={index}>
-          <a className="mx-4 my-2 px-1 block py-2 text-violet-700 font-bold font-mono">
+          <a className="mx-4 my-2 px-1 block py-2 text-violet-700 dark:text-gray-50 font-bold font-mono">
             {link.name}
           </a>
         </Link>

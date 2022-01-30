@@ -1,6 +1,11 @@
+import { motion } from "framer-motion";
 import React from "react";
 import Footer from "../../components/Footer";
 import Header from "../../components/Header";
+import {
+  leftEnterVariants,
+  rightEnterVariants,
+} from "../../utils/motionVariants";
 
 const Contact = () => {
   const [userName, setUserName] = React.useState("");
@@ -16,9 +21,46 @@ const Contact = () => {
     } else {
       setError(null);
       console.log(userName, userEmail, userMessage);
-      setSuccess("Message sent successfully");
+
+      //send mesage to api end point
+      fetch("/api/message", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name: userName,
+          email: userEmail,
+          message: userMessage,
+        }),
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          if (data.error) {
+            setError(data.error);
+          } else {
+            setSuccess(data.success);
+            setUserName("");
+            setUserEmail("");
+            setUserMessage("");
+          }
+        });
     }
   };
+
+  //remove success or error message after 5 seconds
+  React.useEffect(() => {
+    if (success) {
+      setTimeout(() => {
+        setSuccess(null);
+      }, 5000);
+    }
+    if (error) {
+      setTimeout(() => {
+        setError(null);
+      }, 5000);
+    }
+  }, [success, error]);
 
   return (
     <div className="py-0 px-4 dark:bg-gray-700">
@@ -26,13 +68,25 @@ const Contact = () => {
       <div className="min-h-screen w-full">
         <div className="flex items-center justify-center flex-wrap md:flex-nowrap mt-[8%]">
           <div className="w-11/12 md:w-1/2  mx-auto">
-            <h2 className="text-center text-3xl mb-10 text-gray-600 dark:text-gray-50">
+            <motion.h2
+              variants={leftEnterVariants}
+              initial="initial"
+              animate="enter"
+              exit="exit"
+              className="text-center text-3xl mb-10 text-gray-600 dark:text-gray-50"
+            >
               Contact Me
-            </h2>
+            </motion.h2>
           </div>
           <div className="w-11/12 md:w-1/2 mx-auto px-auto md:pr-10 my-4">
             {/* contact me form */}
-            <div className="font-mono w-11/12 mx-aut ">
+            <motion.div
+              variants={rightEnterVariants}
+              initial="initial"
+              animate="enter"
+              exit="exit"
+              className="font-mono w-11/12 mx-aut "
+            >
               <form onSubmit={handleSubmit}>
                 <div className="md:flex md:justify-between items-center mb-8">
                   <div className="md:w-1/3">
@@ -116,7 +170,7 @@ const Contact = () => {
                   </div>
                 </div>
               </form>
-            </div>
+            </motion.div>
           </div>
         </div>
       </div>

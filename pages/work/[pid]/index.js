@@ -31,7 +31,10 @@ const Project = (props) => {
 
       <div className="w-11/12 mx-auto sm:w-4/5 md:w-3/5 my-4 pl-2 flex flex-wrap justify-center items-center">
         {keywords.map((keyword, index) => (
-          <span className="inline-block text-violet-600 dark:text-violet-100 px-2 py-1 mr-2">
+          <span
+            key={index}
+            className="inline-block text-violet-600 dark:text-violet-100 px-2 py-1 mr-2"
+          >
             #{keyword}
           </span>
         ))}
